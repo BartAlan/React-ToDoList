@@ -1,0 +1,25 @@
+Sujet REACT.JS
+
+Pour ce petit projet de TodoLIST, nous voulons a présent rajouter une petite fonctionnalité supplémentaire.
+Nous voulons créer un bouton qui nous permette de switch entre un thème clair(jour) ou un thème sombre (nuit)
+
+Ce petit bouton devras contenir une icone de "lune" ou de "soleil" selon le mode dans lequel on se trouve.
+
+REGLES :
+
+1. Créer un composant pour le bouton
+2. Définir 2 "thèmes" en css
+3. Rendre une appli avec le bouton fonctionnel.
+
+BONUS :
+
+1. Rajouter un changement de couleur du bouton aussi
+2. Rajouter une animation sur le bouton (lorsqu'il change de couleur)
+3. Rajouter une animation sur le thème (lorsqu'il change de couleur)
+
+RENDU :
+
+Votre dossier SANS LE DOSSIER "node_modules", zippé dans un fichier avec votre nom et prénom svp.
+A rendre par mail (TP React ecv en SUJET svp):
+
+christophe.crognier@gmail.com
