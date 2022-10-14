@@ -1,17 +1,19 @@
 :root, .App[data-theme="light"] {
   --background: #F1F1F1;
-  --text-primary: black;
-  --text-secondary: white;
+  --text-primary: #000;
+  --text-secondary: #fff;
   --btn-color: #F1F1F1;
   --border: rgba(0,0,0,0.5);
+  --filter: invert(0);
 }
 
 .App[data-theme="dark"] {
   --background: #212121;
-  --text-primary: white;
-  --text-secondary: black;
+  --text-primary: #fff;
+  --text-secondary: #000;
   --btn-color: #F1F1F1;
   --border: rgba(255,255,255,0.5);
+  --filter: invert(1);
 }
 
 *, ::before, ::after {
@@ -19,7 +21,7 @@
   margin: 0;
   padding: 0;
   transition-property: color, background;
-  transition-duration: 0.6s ;
+  transition-duration: 0.2s, 0.6s;
   transition-timing-function: ease-in-out;
 }
 
@@ -32,27 +34,31 @@
 
 a {
   text-decoration: none;
-  color: var(--text-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
+a, p, span, h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
 h2 {
   margin: 10px 0;
   text-transform: uppercase;
-  font-size: 42px;
+  font-size: 34px;
 }
 
 button {
   cursor: pointer;
 }
 
+:focus {
+  outline: none;
+}
+
 .main {
+  display: flex;
+  flex: 1;
   padding: 20px;
   padding-top: 50px;
-  flex: 1;
 }
 
 .row {
@@ -76,8 +82,9 @@ button {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -92,45 +99,85 @@ button {
   place-content: center;
 }
 
+/* Todo List */
+
 .group-input {
-  position: relative;
   display: flex;
-  align-items: center;
+  border-radius: 50vmax;
+  overflow: hidden;
+  filter: drop-shadow(0 2px 4px var(--border));
 }
 
 .group-input input,
 .group-input button {
   font-size: 22px;
   padding: 10px 20px;
-  border: 1px solid var(--border);
-  overflow: hidden;
+  border: none;
 }
 
 .group-input input {
-  border-right: none;
-  border-radius: 50vmax 0 0 50vmax;
+  flex: 1;
   background: var(--text-secondary);
   color: var(--text-primary);
-
-}
-
-.group-input input:focus ~ button {
-  border-color: black;
-  border-width: 2px;
+  border-right: none;
+  border-radius: 50vmax 0 0 50vmax;
 }
 
 .group-input button {
- border-left: none;
- border-radius: 0 50vmax 50vmax 0;
- color: black;
-
+  color: var(--text-secondary);
+  background-color: var(--border);
 }
 
-.list-group {
-  max-width: 50ch;
+
+/* List items */
+
+#form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.list-items {
+  flex: 1;
+  display: grid;
+  grid-auto-columns: 30ch;
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-auto-flow: column;
   padding: 20px;
-  margin: 50px auto;
+  margin-top: 50px;
   color: var(--text-primary);
+  overflow-x: scroll;
+}
+
+.item-time {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  font-size: 8px;
+}
+
+.item-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-delete {
+  color: red;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  background: transparent;
+}
+
+/* Button toggle */
+
+.iconToggle {
+  width: 30px;
+  aspect-ratio: 1/1;
+  filter: var(--filter);
 }
 
 .group-toggle {
@@ -138,6 +185,10 @@ button {
   flex-direction: column;
   gap: 5px;
   color: var(--text-primary);
+}
+
+.switch {
+  cursor: pointer;
 }
 
 .switch input { 
@@ -167,7 +218,7 @@ button {
   left: 5%;
   border-radius: 50%;
   background: white;
-  transition: all .4s;
+  transition: all .4s ease-in-out;
 }
 
 input:checked + .slider {
@@ -188,5 +239,5 @@ input:checked + .slider:before {
 .border {
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px;
 }

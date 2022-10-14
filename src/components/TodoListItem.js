@@ -1,16 +1,8 @@
 
-const itemNameClass = "row gap border ctn-between";
+const itemNameClass = "gap border ctn-between";
 
-const itemNameStyle = {
-    fontWeight: "bold",
-    textTransform: "uppercase",
-}
-
-const btnDeleteStyle = {
-    all: "unset",
-    cursor: 'pointer',
-    color: "red",
-    fontWeight: 'bold',
+const itemStyle = {
+    position: 'relative',
 }
 
 function TodoListItem({listItem, todoList, setTodoList}) {
@@ -20,9 +12,10 @@ function TodoListItem({listItem, todoList, setTodoList}) {
     }
 
     return(
-        <li className={itemNameClass}>
-            <p style={itemNameStyle}>{listItem.name}</p>
-            <button style={btnDeleteStyle} onClick={deleteTodoItem}>Done</button>
+        <li style={itemStyle} className={itemNameClass}>
+            <span className="item-time">{listItem.date}</span>
+            <p className="item-name">{listItem.name}</p>
+            <button className="btn-delete" onClick={deleteTodoItem}>Done</button>
         </li>
     )
 }

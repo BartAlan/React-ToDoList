@@ -1,9 +1,10 @@
-import { useState } from 'react';
 import ToggleMode from '../ToggleMode';
 
-function Header() {
+function Header({handleToggle,theme}) {
 
-    const [theme, setTheme] = useState('theme' ? 'light' : 'dark');
+    const setTheme = (newTheme) =>{
+        handleToggle(newTheme);
+    }
 
     return (
         <nav className='navbar'>

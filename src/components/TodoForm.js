@@ -8,19 +8,17 @@ function TodoForm({todo, setTodo, todoList, setTodoList}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setTodoList([...todoList, {name: todo, id: nanoid()}]);
+        setTodoList([...todoList, {name: todo, date: new Date().toLocaleString(), id: nanoid()}]);
         setTodo("");
     }
 
     return(
-        <div className='container'>
-            <form onSubmit={handleSubmit}>
-                <div className='group-input'>
-                    <input type="text" value={todo} onChange={handleChange} required/>
-                    <button className='' type="submit" onChange={handleSubmit}>Add</button>
-                </div>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <div className='group-input'>
+                <input type="text" value={todo} onChange={handleChange} required/>
+                <button type="submit" onChange={handleSubmit}>Add</button>
+            </div>
+        </form>
     )
 }
 

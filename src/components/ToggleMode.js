@@ -7,14 +7,13 @@ function ToggleMode({theme, setTheme}) {
     }
 
     return (
-        <>
-            <div className='group-toggle'>
-                <label className='switch' htmlFor="switchTheme">{theme ==='light' ? '🌞' : '🌙'}
+        <div className='group-toggle'>
+            <label className='switch' htmlFor="switchTheme">
+                <img className="iconToggle" src={`./assets/${theme ==='light' ? 'sun' : 'moon'}.svg`} />
                 <input onClick={switchTheme} type="checkbox" id="switchTheme" />
                 <span className="slider"></span>
-                </label>
-            </div>
-        </>
+            </label>
+        </div>
     )
    
 }

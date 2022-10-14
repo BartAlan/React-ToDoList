@@ -16,6 +16,7 @@ function Todo() {
                 setTodo={setTodo}
                 todoList={todoList}
                 setTodoList={setTodoList} />
+                <p>{todoList.length <= 1 ? "There is "+todoList.length+" task" : "There are "+todoList.length+" tasks"}</p>
             </div>
             <TodoList 
             todoList={todoList}
