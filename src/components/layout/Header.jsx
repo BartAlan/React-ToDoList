@@ -1,6 +1,7 @@
+import React from 'react';
 import ToggleMode from '../ToggleMode';
 
-function Header({handleToggle,theme}) {
+export default function Header({handleToggle,theme}) {
 
     const setTheme = (newTheme) =>{
         handleToggle(newTheme);
@@ -9,14 +10,13 @@ function Header({handleToggle,theme}) {
     return (
         <nav className='navbar'>
             <div className='container ctn-between'>
-                <a href="#home"><h1>MY TODO LIST</h1></a>
+                <a href="#home">
+                    <h1>MY TODO LIST</h1>
+                </a>
                 <ToggleMode 
-                theme={theme}
-                setTheme={setTheme}
-                />
+                    theme={theme}
+                    setTheme={setTheme} />
             </div>
         </nav>
     )
 }
-
-export default Header;

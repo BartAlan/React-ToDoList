@@ -1,5 +1,6 @@
+import React from 'react';
 
-function ToggleMode({theme, setTheme}) {
+export default function ToggleMode({theme, setTheme}) {
 
     const switchTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -9,7 +10,7 @@ function ToggleMode({theme, setTheme}) {
     return (
         <div className='group-toggle'>
             <label className='switch' htmlFor="switchTheme">
-                <img className="iconToggle" src={`./assets/${theme ==='light' ? 'sun' : 'moon'}.svg`} />
+                <img className="iconToggle" src={`./assets/${theme === 'light' ? 'sun' : 'moon'}.svg`} />
                 <input onClick={switchTheme} type="checkbox" id="switchTheme" />
                 <span className="slider"></span>
             </label>
@@ -17,5 +18,3 @@ function ToggleMode({theme, setTheme}) {
     )
    
 }
-
-export default ToggleMode;

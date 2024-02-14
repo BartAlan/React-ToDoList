@@ -149,6 +149,10 @@ button {
   overflow-x: scroll;
 }
 
+.list-items::-webkit-scrollbar {
+  display: none;
+}
+
 .item-time {
   position: absolute;
   left: 5px;

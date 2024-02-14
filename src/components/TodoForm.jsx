@@ -1,6 +1,7 @@
+import React from 'react';
 import { nanoid } from 'nanoid';
 
-function TodoForm({todo, setTodo, todoList, setTodoList}) {
+export default function TodoForm({todo, setTodo, todoList, setTodoList}) {
 
     const handleChange = (event) => {
         setTodo(event.target.value);
@@ -21,5 +22,3 @@ function TodoForm({todo, setTodo, todoList, setTodoList}) {
         </form>
     )
 }
-
-export default TodoForm;

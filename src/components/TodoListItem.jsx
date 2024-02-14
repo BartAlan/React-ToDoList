@@ -1,11 +1,12 @@
+import React from 'react';
 
-const itemNameClass = "gap border ctn-between";
+export default function TodoListItem({listItem, todoList, setTodoList}) {
 
-const itemStyle = {
-    position: 'relative',
-}
+    const itemNameClass = "gap border ctn-between";
 
-function TodoListItem({listItem, todoList, setTodoList}) {
+    const itemStyle = {
+        position: 'relative',
+    }
 
     const deleteTodoItem = () => {
         setTodoList(todoList.filter(item => item.id !== listItem.id));
@@ -19,5 +20,3 @@ function TodoListItem({listItem, todoList, setTodoList}) {
         </li>
     )
 }
-
-export default TodoListItem;
