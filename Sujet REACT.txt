@@ -16,10 +16,3 @@ BONUS :
 1. Rajouter un changement de couleur du bouton aussi
 2. Rajouter une animation sur le bouton (lorsqu'il change de couleur)
 3. Rajouter une animation sur le thème (lorsqu'il change de couleur)
-
-RENDU :
-
-Votre dossier SANS LE DOSSIER "node_modules", zippé dans un fichier avec votre nom et prénom svp.
-A rendre par mail (TP React ecv en SUJET svp):
-
-christophe.crognier@gmail.com
